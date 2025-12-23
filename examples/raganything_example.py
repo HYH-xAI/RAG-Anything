@@ -269,6 +269,8 @@ async def process_with_rag(
 def main():
     """Main function to run the example"""
     parser = argparse.ArgumentParser(description="MinerU RAG Example")
+    # 这里 file_path 没有前缀 "--" 表示它是一个位置参数（positional argument），不是可选的命名参数（optional/flag）。
+    # 位置参数：add_argument("file_path", ...) 会创建一个必须按顺序出现在命令行中的参数。调用脚本时直接给值。
     parser.add_argument("file_path", help="Path to the document to process")
     parser.add_argument(
         "--working_dir", "-w", default="./rag_storage", help="Working directory path"
