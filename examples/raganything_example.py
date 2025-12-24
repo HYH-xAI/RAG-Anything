@@ -19,6 +19,7 @@ from pathlib import Path
 # Add project root directory to Python path
 import sys
 
+# __file__ 是 Python 在“从文件执行脚本时”自动设置的一个全局变量，表示当前模块的文件路径，一般只能通过python script.py执行，在Jupyter Notebook/IPython中无法识别。
 sys.path.append(str(Path(__file__).parent.parent))
 
 from lightrag.llm.openai import openai_complete_if_cache, openai_embed
